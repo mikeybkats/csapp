@@ -12,7 +12,11 @@ Diagnostics:
         portability-*,
         # readability-*,
       ]
-    Remove: [cppcoreguidelines-avoid-magic-numbers]
+    Remove:
+      [
+        cppcoreguidelines-avoid-magic-numbers,
+        bugprone-easily-swappable-parameters,
+      ]
 
 Index:
   Background: Build
