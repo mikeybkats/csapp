@@ -30,11 +30,9 @@ int least_most_word(int x, int y) {
 int main() {
   int x = 0x456789;
   int y = 0x987654;
-
   int z = least_most_word(x, y);
 
   printf("x:   %#8x\n", x);
   printf("y:   %#8x\n", y);
   printf("lmw: %#8x\n", z);
-  printf("\n");
 }
