@@ -15,6 +15,7 @@ Diagnostics:
     Remove:
       [
         cppcoreguidelines-avoid-magic-numbers,
+        cppcoreguidelines-init-variables,
         bugprone-easily-swappable-parameters,
       ]
 

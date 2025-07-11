@@ -27,6 +27,16 @@ int least_most_word(int x, int y) {
   return y;
 }
 
+void print_bits(unsigned int num) {
+  for (int i = 31; i >= 0; i--) {
+    printf("%d", (num >> i) & 1);
+    if (i % 4 == 3) {
+      printf(" ");
+    }
+  }
+  printf("\n");
+}
+
 int main() {
   int x = 0x456789;
   int y = 0x987654;
