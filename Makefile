@@ -11,12 +11,16 @@ BUILD_DIR = build
 SRC = $(wildcard $(SRC_DIR)/*.c)
 TEST_SRC = $(wildcard $(TEST_DIR)/*.c)
 
+
 # Object files - put them all in BUILD_DIR
 OBJ = $(SRC:%.c=$(BUILD_DIR)/%.o)
 TEST_OBJ = $(TEST_SRC:%.c=$(BUILD_DIR)/%.o)
+LIBRARY_OBJS = $(BUILD_DIR)/src/library.o
 
 # Output executables - one for each .c file in src
-EXECUTABLES = $(SRC:$(SRC_DIR)/%.c=$(BUILD_DIR)/%)
+# EXECUTABLES = $(SRC:$(SRC_DIR)/%.c=$(BUILD_DIR)/%)
+EXEC_SOURCES = $(filter-out $(SRC_DIR)/library.c, $(SRC))
+EXECUTABLES = $(EXEC_SOURCES:$(SRC_DIR)/%.c=$(BUILD_DIR)/%)
 
 # Test executable
 TEST_EXEC = $(BUILD_DIR)/test
@@ -36,7 +40,7 @@ test: $(TEST_EXEC)
 	./$(TEST_EXEC)
 
 # Pattern rule for executables - one for each .c file
-$(BUILD_DIR)/%: $(BUILD_DIR)/src/%.o
+$(BUILD_DIR)/%: $(BUILD_DIR)/src/%.o $(LIBRARY_OBJS)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $^
 
 $(TEST_EXEC): $(OBJ) $(TEST_OBJ)

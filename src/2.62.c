@@ -1,18 +1,10 @@
 #include <stdio.h>
 
+#include "library.h"
+
 /* 2.62 - write a function int_shifts_are_arithmetic() that yields 1 when run on
  * a machine that uses arithmetic right shifts for data type int and yields 0
  * otherwise.*/
-
-void print_bits(unsigned int num) {
-  for (int i = 31; i >= 0; i--) {
-    printf("%d", (num >> i) & 1);
-    if (i % 4 == 0) {
-      printf(" ");
-    }
-  }
-  printf("\n");
-}
 
 /*
 check to see if a machine performs arithmetic or logical shifts

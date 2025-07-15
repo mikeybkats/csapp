@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "library.h"
+
 /* 2.59 - an expression that yields a new word consisting of the least
  * significant byte of x and the remaining bytes of y. */
 
@@ -25,16 +27,6 @@ int least_most_word(int x, int y) {
   }
 
   return y;
-}
-
-void print_bits(unsigned int num) {
-  for (int i = 31; i >= 0; i--) {
-    printf("%d", (num >> i) & 1);
-    if (i % 4 == 3) {
-      printf(" ");
-    }
-  }
-  printf("\n");
 }
 
 int main() {

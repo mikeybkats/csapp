@@ -1,18 +1,10 @@
 #include <limits.h>
 #include <stdio.h>
 
+#include "library.h"
+
 /* 2.61 - write c expressions that evaluate to 1 when the following conditions
  * are true and to 0 when they are false. Assume x is of type int */
-
-void print_bits(unsigned int num) {
-  for (int i = 31; i >= 0; i--) {
-    printf("%d", (num >> i) & 1);
-    if (i % 4 == 0) {
-      printf(" ");
-    }
-  }
-  printf("\n");
-}
 
 int get_msb(int x) {
   /* Shift b w-8 */

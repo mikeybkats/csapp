@@ -1,16 +1,8 @@
 #include <stdio.h>
 
-/* 2.63 */
+#include "library.h"
 
-void print_bits(unsigned int num) {
-  for (int i = 31; i >= 0; i--) {
-    printf("%d", (num >> i) & 1);
-    if (i % 4 == 0) {
-      printf(" ");
-    }
-  }
-  printf("\n");
-}
+/* 2.63 */
 
 /* function srl - performs a logical right shift using an arithmetic right shift
  */
