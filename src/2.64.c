@@ -11,10 +11,12 @@ int any_odd_one(unsigned x) {
 
 int main() {
   int x = 2;   // 0010 bit 1
+  int a = 5;   // 0101 bit 0 and 2
   int y = 10;  // 1010 bit 1 and 3
   int z = 11;  // 1011 bit 0, 1 and 3
 
   printf("2 has an odd bit: %s\n", any_odd_one(x) ? "true" : "false");
+  printf("5 has an odd bit: %s\n", any_odd_one(a) ? "true" : "false");
   printf("10 has an odd bit: %s\n", any_odd_one(y) ? "true" : "false");
   printf("11 has an odd bit: %s\n", any_odd_one(z) ? "true" : "false");
 }
